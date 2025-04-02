@@ -1,0 +1,62 @@
+/* General Styles for All Menus */
+.dashboard-menu {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 15px;
+    width: 250px;
+    height: auto;
+  }
+  
+  .dashboard-menu h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* List Group Styling */
+  .list-group-item {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: #333;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #F37254;  /* Light background color */
+    color: white;               /* White text on hover */
+    transform: translateX(5px); /* Slight right shift on hover */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Active State for Links */
+  .list-group-item.active {
+    background-color: #F37254;
+    color: white;
+    font-weight: 600;
+    transform: none;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .dashboard-menu {
+      width: 100%;
+      margin: 10px;
+      padding: 10px;
+    }
+    
+    .list-group-item {
+      font-size: 1rem;
+      padding: 8px 15px;
+    }
+  }
+  

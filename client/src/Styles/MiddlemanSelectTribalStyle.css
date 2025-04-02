@@ -1,0 +1,86 @@
+/* Middleman Select Tribal Styles */
+.middleman-select-container {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .middleman-select-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .middleman-table {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .middleman-table th {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .middleman-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .middleman-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .middleman-btn-select {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .middleman-btn-select:hover {
+    background-color: #218838;
+  }
+  
+  .middleman-btn-profile {
+    background-color: #17a2b8;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+  
+  .middleman-btn-profile:hover {
+    background-color: #138496;
+  }
+  
+  /* Tribal Profile Section */
+  .middleman-profile-container {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+  
+  .middleman-profile-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  

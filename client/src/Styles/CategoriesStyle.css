@@ -1,0 +1,81 @@
+/* Container for categories */
+.categories-page .container {
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Heading */
+.categories-page .container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Row styles to display categories in multiple columns */
+.categories-page .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between the items */
+}
+
+/* Individual category button container */
+.categories-page .col-md-6 {
+    flex: 1 1 calc(50% - 20px); /* Ensures 2 items per row with space */
+    max-width: 45%; /* Ensures they do not stretch too far */
+    margin-bottom: 30px; /* Margin between rows */
+    display: flex;
+    justify-content: center;
+}
+
+/* Button styles for categories */
+.categories-page .btn {
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 10px; /* Rounded corners for the button */
+    text-transform: capitalize;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db; /* Primary color */
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    text-decoration: none; /* Remove underline from link */
+}
+
+/* Hover effect for buttons */
+.categories-page .btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Link inside button */
+.categories-page .btn a {
+    color: white;
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .categories-page .col-md-6 {
+        flex: 1 1 100%; /* Make the buttons take up full width on small screens */
+        max-width: 100%;
+    }
+
+    .categories-page .btn {
+        font-size: 16px;
+        padding: 12px 20px; /* Slightly smaller button on mobile */
+    }
+}

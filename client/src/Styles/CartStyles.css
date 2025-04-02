@@ -1,0 +1,150 @@
+/* Cart Page Product Cards */
+.cart-page .card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Softer card shadow */
+    padding: 20px;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.9); /* Lighter background with soft opacity */
+    transition: all 0.3s ease;
+  }
+  
+  .cart-page .card:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Slightly softened shadow on hover */
+  }
+  
+  .cart-page .card .col-md-4 img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .cart-page .card .col-md-4 p {
+    color: #444; /* Dark gray for text, softer than pure white */
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 6px 0;
+    word-wrap: break-word;
+  }
+  
+  /* Separate Product Title and Description */
+  .cart-page .card .col-md-4 p:first-child {
+    color: #333; /* Dark gray for product title */
+    font-size: 1.25rem;
+    font-weight: 600; /* Slightly bold title */
+  }
+  
+  .cart-page .card .col-md-4 p:nth-child(2) {
+    color: #666; /* Medium gray for product description */
+    font-size: 1rem;
+  }
+  
+  .cart-page .card .col-md-4 p:last-child {
+    color: #27ae60; /* Softer green for price */
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  /* Remove Button */
+  .cart-page .card button {
+    background-color: #3498db; /* Softer blue for remove button */
+    color: white;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    border: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .cart-page .card button:hover {
+    background-color: #2980b9; /* Slightly darker blue on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Cart Summary Section */
+  .cart-page .col-md-4.text-center {
+    background: rgba(255, 255, 255, 0.85); /* Lightened background for summary */
+    backdrop-filter: blur(6px); /* Slight blur effect */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Softer shadow for the summary */
+  }
+  
+  .cart-page .col-md-4.text-center h1,
+  .cart-page .col-md-4.text-center h2,
+  .cart-page .col-md-4.text-center h4 {
+    color: #333; /* Dark gray for text */
+    font-weight: 700;
+  }
+  
+  .cart-page .col-md-4.text-center button {
+    background-color: #2ecc71; /* Softer green for primary action */
+    color: white;
+    border-radius: 30px;
+    padding: 16px 35px;
+    font-size: 1.1rem;
+    border: none;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .cart-page .col-md-4.text-center button:hover {
+    background-color: #27ae60; /* Slightly darker green on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Buttons for Address */
+  .cart-page button.btn-outline-warning {
+    color: #f39c12;
+    border: 2px solid #f39c12;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .cart-page button.btn-outline-warning:hover {
+    background-color: #f39c12;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* Disabled Button */
+  .cart-page button:disabled {
+    background-color: #bdc3c7;
+    color: #ecf0f1;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    .cart-page .col-md-4 {
+      flex: 1 1 100%;
+      margin-bottom: 20px;
+    }
+  
+    .cart-page .card {
+      flex-direction: column;
+    }
+  
+    .cart-page .col-md-4.text-center {
+      padding: 20px 15px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .cart-page .card {
+      flex-direction: column;
+    }
+  
+    .cart-page .col-md-4.text-center button {
+      padding: 14px 30px;
+    }
+  }
+  

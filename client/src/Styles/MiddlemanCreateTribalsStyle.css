@@ -1,0 +1,79 @@
+/* MiddlemanCreateTribal Form Container */
+.middleman-create-tribal {
+    background: linear-gradient(135deg, #007bff, #00c6ff); /* Beautiful gradient */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    color: white;
+  }
+  
+  /* Title Styling */
+  .middleman-create-tribal h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  /* Input Fields */
+  .middleman-create-tribal .form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .middleman-create-tribal .form-input:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+  }
+  
+  /* File Input */
+  .middleman-create-tribal input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease-in-out;
+    color: white;
+  }
+  
+  .middleman-create-tribal input[type="file"]:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Submit Button */
+  .middleman-create-tribal button {
+    width: 100%;
+    background: linear-gradient(135deg, #ff512f, #dd2476); /* Modern red-pink gradient */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .middleman-create-tribal button:hover {
+    background: linear-gradient(135deg, #e52d27, #b31217);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .middleman-create-tribal {
+      width: 90%;
+    }
+  }
+  

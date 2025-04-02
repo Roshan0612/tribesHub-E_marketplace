@@ -1,0 +1,95 @@
+/* MiddlemanCreateProduct.css */
+.middleman-container {
+    padding: 20px;
+  }
+  
+  .middleman-form-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .middleman-form-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .file-input-btn {
+    display: block;
+    padding: 10px;
+    border: 2px dashed #007bff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #007bff;
+    transition: 0.3s;
+  }
+  
+  .file-input-btn:hover {
+    background: rgba(0, 123, 255, 0.1);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background: #007bff;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background: #0056b3;
+  }
+  
+  .image-preview {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .image-preview img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .middleman-container {
+      padding: 15px;
+    }
+  
+    .middleman-form-container {
+      padding: 20px;
+    }
+  }
+  
