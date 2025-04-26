@@ -1,4 +1,4 @@
-/* Center the form container */
+
 .login-container, .forgot-password-container {
     display: flex;
     justify-content: center;
@@ -10,19 +10,19 @@
   /* Form styling */
   .login-form, .forgot-password-form {
     width: 100%;
-    max-width: 400px; /* Reduces the width of the form */
+    max-width: 400px; 
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Margin below form inputs */
+
   .mb-3 {
     margin-bottom: 15px;
   }
   
-  /* Input field styling */
+  
   .form-control {
     width: 100%;
     padding: 10px;
@@ -31,7 +31,7 @@
     border-radius: 4px;
   }
   
-  /* Forgot password link styling */
+
   .forgot-password-btn {
     text-align: center;
     padding: 0;
@@ -46,7 +46,7 @@
     text-decoration: underline;
   }
   
-  /* Button styling */
+  
   .btn-primary {
     padding: 12px;
     font-size: 14px;
@@ -56,7 +56,7 @@
     color: white;
   }
   
-  /* Make buttons take up full width */
+
   .w-100 {
     width: 100%;
   }

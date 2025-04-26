@@ -21,7 +21,7 @@ const ProductDetails =() => {
               Authorization: auth?.token, 
             },
         });
-        console.log(data); // Look at the structure of data
+        console.log(data); 
 
         setProducts(data.products)
         getSimilarProducts(data.products._id,data?.products?.category._id)
@@ -35,7 +35,7 @@ const ProductDetails =() => {
     
   }, [params?.slug])
   
-  //get Similar products to product
+  
   const getSimilarProducts=async(pId , cId)=>{
     try {
         const {data} =await axios.get(`${process.env.REACT_APP_API}/api/v1/product/similar-product/${pId}/${cId}`,

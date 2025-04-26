@@ -36,10 +36,11 @@ const Products = () => {
         </div>
         <div className='col-md-9'>
             <h1 className='text-center'>all product list</h1>
-            <div className='d-flex  flex'>
+            <div className='flex flex-wrap -mx-4'>
             {products.map(p=>
             (
-              <Link key={p._id} to={`/dashboard/admin/products/${p.slug}`}>
+              <Link key={p._id} to={`/dashboard/admin/products/${p.slug}`}
+              className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-6">
                 <div className="card m-2" style={{ width: '18rem' }} >
                    <img src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`} 
                         className="card-img-top" alt={p.name} />

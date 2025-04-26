@@ -1,30 +1,33 @@
-import React from 'react'
-import "../../"
+import React from "react";
+import "../../Styles/FooterStyle.css";
+
 const Footer = () => {
   return (
-    <>
-       <footer className="footer">
+    <footer className="footer">
       <div className="footer-container">
-        {/* Copyright Section */}
+       
         <p className="footer-copyright">
           © 2024 My Website. All Rights Reserved.
         </p>
 
-        {/* Links Section */}
-        <div className="footer-links">
-          <a href="/about" className="footer-link">About Us</a>
-          <a href="/contact" className="footer-link">Contact</a>
-          <a href="/privacy" className="footer-link">Privacy Policy</a>
-          <a href="/terms" className="footer-link">Terms of Service</a>
+        
+        <div className="footer-links text-white">
+          <a href="/about" className="text-white footer-link">About Us</a>
+          <span className="footer-separator"> | </span>
+          <a href="/contact" className="text-white footer-link">Contact</a>
+          <span className="footer-separator"> | </span>
+          <a href="/privacy" className="text-white footer-link">Privacy Policy</a>
+          <span className="footer-separator"> | </span>
+          <a href="/terms" className="text-white footer-link">Terms of Service</a>
         </div>
 
-        {/* Social Media Section */}
+       
         <div className="footer-social">
           <a href="https://facebook.com" className="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <i className="fab fa-facebook-f"></i>
           </a>
           <a href="https://twitter.com" className="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <i className="fab fa-twitter"></i>
+          <i con="fa-brands fa-x-twitter" />
           </a>
           <a href="https://instagram.com" className="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i className="fab fa-instagram"></i>
@@ -32,8 +35,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-    </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

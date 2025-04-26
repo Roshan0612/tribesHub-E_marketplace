@@ -4,7 +4,7 @@
     padding: 15px;
   }
   
-  /* Category Title */
+
   .category-products .text-center {
     font-size: 2rem;
     font-weight: 700;
@@ -14,7 +14,7 @@
     letter-spacing: 1px;
   }
   
-  /* Product Count */
+  
   .category-products .text-center:nth-child(2) {
     font-size: 1.2rem;
     font-weight: 400;
@@ -22,36 +22,36 @@
     margin-bottom: 30px;
   }
   
-  /* Product Card Styles */
+  
   .category-products .card {
     transition: all 0.3s ease;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     margin: 15px;
-    background-color: #fff; /* Clean white background */
+    background-color: #fff; 
     border: none;
     overflow: hidden;
-    cursor: pointer; /* Make it look clickable */
+    cursor: pointer; 
     height: 380px;
   }
   
   .category-products .card:hover {
-    transform: translateY(-10px); /* Slight lift on hover */
+    transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   }
   
   .category-products .card img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Maintain aspect ratio while covering */
-    transition: all 0.3s ease; /* Smooth hover transition for image */
+    object-fit: cover; 
+    transition: all 0.3s ease; 
   }
   
   .category-products .card:hover img {
-    transform: scale(1.1); /* Zoom-in effect for image on hover */
+    transform: scale(1.1);
   }
   
-  /* Card Body */
+
   .category-products .card-body {
     padding: 15px;
     display: flex;
@@ -76,27 +76,26 @@
     margin-bottom: 20px;
   }
   
-  /* Style for Category Image */
+  
   .category-products .card img {
-    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    border-radius: 15px 15px 0 0; 
     transition: all 0.3s ease;
   }
   
-  /* Spacing between cards */
+
   .category-products .card + .card {
     margin-top: 25px;
   }
   
-  /* Product Link Style */
+ 
   .category-products .card a {
     text-decoration: none;
     color: inherit;
   }
   
-  /* Responsive Design */
   @media (max-width: 1024px) {
     .category-products .card {
-      width: 45%; /* 2 cards per row */
+      width: 45%;
       height: 380px;
       margin: 10px;
     }
@@ -104,8 +103,8 @@
   
   @media (max-width: 768px) {
     .category-products .card {
-      width: 100%; /* Full width for cards in small screens */
-      margin: 10px 0; /* Adjust margin for smaller screens */
+      width: 100%; 
+      margin: 10px 0; 
     }
   
     .category-products .container {

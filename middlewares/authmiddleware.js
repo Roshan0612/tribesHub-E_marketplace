@@ -43,7 +43,7 @@ const isAdmin = async (req, res, next) => {
 const isMiddleman = async (req, res, next) => {
   try {
     const user = await userModel.findById(req.user._id);
-    if (user.role !== 2) {  // Admin role is 1
+    if (user.role !== 2) { 
       return res.status(401).send({
         success: false,
         message: "UnAuthorized Access",

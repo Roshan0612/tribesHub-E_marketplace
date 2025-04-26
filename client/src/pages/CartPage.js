@@ -43,25 +43,25 @@ const CartPage = () => {
   }
   const handlePayment = async () => {
     try {
-      // Step 1: Call backend to create payment order
+      
       const { data } = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/order/payment-order`,
-        { cart, total: totalCost() }, // Pass the cart and total cost (totalCost() gives total in INR)
+        { cart, total: totalCost() }, 
         {
           headers: {
-            Authorization: auth?.token, // Pass token to authorize the request
+            Authorization: auth?.token, 
           },
         }
       );
       
-      console.log('Create Payment Response:', data); // Debugging the backend response
+      console.log('Create Payment Response:', data); 
   
       if (data?.success) {
-        const order = data.order; // Destructure order data from the response
+        const order = data.order; 
   
         const options = {
-          key: process.env.RAZORPAY_KEY_ID, // Razorpay Key ID
-          amount: order.amount, // Amount is in paise
+          key: process.env.RAZORPAY_KEY_ID,
+          amount: order.amount, 
           currency: 'INR',
           name: 'E-commerce Store',
           description: 'Payment for your order',
@@ -69,7 +69,7 @@ const CartPage = () => {
           handler: async function (paymentData) {
             console.log('Payment Data from Razorpay:', paymentData);
   
-            // Step 2: Verify payment on the backend
+            
             const verifyResponse = await axios.post(
               `${process.env.REACT_APP_API}/api/v1/order/verify-payment`,
               {
@@ -79,14 +79,12 @@ const CartPage = () => {
               },
               {
                 headers: {
-                  Authorization: auth?.token, // Pass token to authorize the request
+                  Authorization: auth?.token, 
                 },
               }
             );
   
             console.log('Verify Payment Response:', verifyResponse);
-  
-            // Step 3: Handle the response from backend verification
             if (verifyResponse?.data.success) {
               alert('Payment successful!');
               setCart([])
@@ -97,12 +95,12 @@ const CartPage = () => {
             }
           },
           theme: {
-            color: '#F37254', // Theme color for the payment modal
+            color: '#F37254', 
           },
         };
   
         const razorpay = new  window.Razorpay(options);
-        razorpay.open(); // Open the Razorpay payment modal
+        razorpay.open();
       }
     } catch (error) {
       console.error('Payment Error:', error);
@@ -114,7 +112,7 @@ const CartPage = () => {
 
   return (
     <Layouts>
-  <div className="container cart-page"> {/* Add cart-page class here */}
+  <div className="container cart-page"> 
     <div className="row">
       <div className="col-md-12">
         <h3 className="text-center">{` hello ${auth?.token && auth?.user?.name}`}</h3>

@@ -13,7 +13,7 @@ function ProductFind() {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API}/api/v1/product/search-product/${keyword}`, {
         headers: {
-          Authorization: `Bearer ${auth?.token}`, // Ensure token is passed for authorization
+          Authorization: `Bearer ${auth?.token}`, 
         },
       });
       setProducts(response.data);
@@ -24,7 +24,7 @@ function ProductFind() {
     }
   };
 
-  // Handle the voice search (passing the keyword to the API)
+ 
   const handleProductFind = (keyword) => {
     console.log("Searching for:", keyword);
     fetchProducts(keyword);

@@ -9,8 +9,8 @@ const CategoryForm = ({ handleSubmit, value, setValue }) => {
             type="text"
             className="form-control"
             placeholder="Enter new category"
-            value={value} // value should reflect the category name, whether new or updated
-            onChange={(e) => setValue(e.target.value)} // Update the name when typing
+            value={value} 
+            onChange={(e) => setValue(e.target.value)} 
           />
         </div>
 

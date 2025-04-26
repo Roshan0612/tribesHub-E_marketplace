@@ -1,86 +1,118 @@
-/* Middleman Select Tribal Styles */
-.middleman-select-container {
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+.middleman-select-tribal {
+  background: linear-gradient(135deg, #007bff, #00c6ff); /* Blue Gradient */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+}
+
+
+.table {
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background: linear-gradient(135deg, #ff512f, #dd2476); /* Red-Pink Gradient */
+  color: white;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+.tribal-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #28a745, #218838); /* Green Gradient */
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #17a2b8, #138496); /* Cyan Gradient */
+  color: white;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #138496, #117a8b);
+}
+
+.ml-2 {
+  margin-left: 10px;
+}
+
+
+.tribal-profile {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.tribal-profile h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.tribal-profile p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.tribal-profile h4 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #555;
+}
+
+
+@media (max-width: 768px) {
+  .table th, .table td {
+    font-size: 12px;
+    padding: 8px;
   }
-  
-  .middleman-select-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
+
+  .tribal-img {
+    width: 40px;
+    height: 40px;
   }
-  
-  .middleman-table {
-    width: 100%;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
+
+  .btn {
+    font-size: 12px;
+    padding: 6px 10px;
   }
-  
-  .middleman-table th {
-    background: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .middleman-table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .middleman-img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  .middleman-btn-select {
-    background-color: #28a745;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .middleman-btn-select:hover {
-    background-color: #218838;
-  }
-  
-  .middleman-btn-profile {
-    background-color: #17a2b8;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 5px;
-    transition: 0.3s;
-  }
-  
-  .middleman-btn-profile:hover {
-    background-color: #138496;
-  }
-  
-  /* Tribal Profile Section */
-  .middleman-profile-container {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-  }
-  
-  .middleman-profile-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
+}

@@ -31,33 +31,33 @@ const Header = () => {
       return;
     }
 
-    // Initialize the SpeechRecognition object
+    
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     recognition.lang = 'en-US';
 
-    // Start recognition
+
     recognition.start();
 
-    // Define the onresult event to handle the recognized speech
+    
     recognition.onresult = (event) => {
-      // Debugging: Log the entire event object
+      
       console.log('Speech recognition result event:', event);
 
-      // Extract the transcript from the event object
+      
       const transcript = event.results[0][0].transcript;
-      console.log('Transcript:', transcript); // Log the recognized speech
+      console.log('Transcript:', transcript); 
 
-      // Set the response state to display the recognized speech in the UI
+      
       setResponse(`You said: ${transcript}`);
     };
 
-    // Error handling
+   
     recognition.onerror = (event) => {
       console.error('Speech recognition error:', event);
       setResponse('Error recognizing speech.');
     };
 
-    // End event (called when the recognition session ends)
+    
     recognition.onend = () => {
       console.log('Speech recognition session ended.');
     };
@@ -68,7 +68,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
            
-          {/* Brand Name */}
+          
           <Link className="navbar-brand" to="#">
             🛒 TribalHub
           </Link>
@@ -85,10 +85,10 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Links on the right (collapsed in smaller screens) */}
+          
           <div className="collapse navbar-collapse" id="navbarNav">
             
-            <ul className="navbar-nav ms-auto"> {/* ms-auto for right-alignment */}
+            <ul className="navbar-nav ms-auto"> 
 
               <SearchInput/>
               <VoiceAssistent onProductFind={() => {}} />
@@ -98,7 +98,7 @@ const Header = () => {
                 </NavLink>
               </li>
 
-              {/* Categories and other links */}
+             
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -125,7 +125,7 @@ const Header = () => {
                 </ul>
               </li>
 
-              {/* Authentication section */}
+              
               {!auth.user ? (
                 <>
                   <li className="nav-item">
@@ -185,8 +185,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-
-      {/* Display the recognized speech result */}
+      
       <div>
         <p>{response}</p>
       </div>

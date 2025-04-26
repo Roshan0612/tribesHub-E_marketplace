@@ -27,8 +27,8 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     photo: {
-      data: Buffer, // Store the photo as binary data (Buffer)
-      contentType: String, // Store the content type (e.g., image/jpeg)
+      data: Buffer, 
+      contentType: String,
     },
     shopping: {
       type: Boolean,

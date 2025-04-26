@@ -1,4 +1,4 @@
-/* General Styles for All Menus */
+
 .dashboard-menu {
     background-color: #fff;
     border-radius: 10px;
@@ -18,7 +18,7 @@
     letter-spacing: 1px;
   }
   
-  /* List Group Styling */
+  
   .list-group-item {
     padding: 10px 20px;
     font-size: 1.1rem;
@@ -32,13 +32,13 @@
   }
   
   .list-group-item:hover {
-    background-color: #F37254;  /* Light background color */
-    color: white;               /* White text on hover */
-    transform: translateX(5px); /* Slight right shift on hover */
+    background-color: #F37254;  
+    color: white;               
+    transform: translateX(5px); 
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Active State for Links */
+  
   .list-group-item.active {
     background-color: #F37254;
     color: white;
@@ -46,7 +46,7 @@
     transform: none;
   }
   
-  /* Mobile Responsiveness */
+
   @media (max-width: 768px) {
     .dashboard-menu {
       width: 100%;

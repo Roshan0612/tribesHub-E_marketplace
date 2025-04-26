@@ -32,7 +32,7 @@ router.get("/product-count",productCountController)
 router.get("product-list/:page",productListController)
 router.get("/search-product/:keyword",searchProductController)
 router.get("/similar-product/:pId/:cId",similarProductController)
-//get category wise product
+
 router.get("/category-wise-product/:slug",categoryWiseProductController)
 
 

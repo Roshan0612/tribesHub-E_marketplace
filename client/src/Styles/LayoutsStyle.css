@@ -1,4 +1,4 @@
-/* Ensure full height for the app */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -6,20 +6,20 @@ html, body {
     flex-direction: column;
 }
 
-/* Wrapper to manage layout */
+
 #root {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
 }
 
-/* Ensures main content pushes the footer down */
+
 main {
-    flex-grow: 1; /* Takes up all available space */
-    padding-bottom: 20px; /* Prevents overlap with footer */
+    flex-grow: 1; 
+    padding-bottom: 20px; 
 }
 
-/* Footer styles */
+
 footer {
     background-color: #2c3e50;
     color: white;

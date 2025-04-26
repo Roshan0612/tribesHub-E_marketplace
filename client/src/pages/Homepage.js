@@ -7,9 +7,10 @@ import Prices from '../components/Prices.js';
 import { Checkbox, Radio } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/cart';
-import { gsap } from 'gsap'; // Import GSAP for animation
-import tribalScene from '../Image/hero.jpg'; // Import the background image
+import { gsap } from 'gsap'; 
+import tribalScene from '../Image/hero.jpg'; 
 import "../Styles/Homepage.css"
+
 
 const Homepage = () => {
   const [auth] = useAuth();
@@ -18,15 +19,13 @@ const Homepage = () => {
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
   const [total, setTotal] = useState(0);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
   const [cart, setCart] = useCart([]);
   const navigate = useNavigate();
 
-  const greeting = "Welcome to Tribes India"; // Greeting message
+  const greeting = "Welcome to Tribes India"; 
 
   useEffect(() => {
-    // GSAP animation for the greeting
+    
     const letters = greeting.split('').map((letter, index) => {
       const span = document.createElement('span');
       span.innerText = letter;
@@ -34,7 +33,7 @@ const Homepage = () => {
     });
 
     const titleElement = document.getElementById('animated-title');
-    titleElement.innerHTML = ''; // Clear any previous content
+    titleElement.innerHTML = ''; 
 
     letters.forEach((span) => titleElement.appendChild(span));
 
@@ -143,30 +142,25 @@ const Homepage = () => {
     <Layouts title={"All Products - Best Offers!"}>
       {/* Animated Greeting Section */}
       <div
-        className="relative w-full min-h-screen"
-        style={{
-          backgroundImage: `url(${tribalScene})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
+      className="animated-greeting"
+      style={{
+      backgroundImage: `url(${tribalScene})`,
+      }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="text-center">
-            <h1 id="animated-title" className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-lg">
-              {/* Animated greeting will appear here */}
-              Welcome to Tribes India
-            </h1>
-            <p className="text-white text-lg md:text-xl max-w-3xl mx-auto">
-              Explore the beauty of ancient culture combined with modern inspiration.
-            </p>
-          </div>
+      <div className="animated-overlay"></div>
+        <div className="animated-content">
+        <h1 id="animated-title" className="animated-title">
+             Welcome to Tribes India
+        </h1>
+        <p className="animated-subtitle">
+            Explore the beauty of ancient culture combined with modern inspiration.
+        </p>
         </div>
       </div>
 
-      {/* Content Below the Animated Greeting */}
+
+      
       <div className="row mt-3">
-        {/* Filter Section */}
         <div className="col-md-3 filters">
           <h4>Filter By Category</h4>
           <div className="d-flex flex-column">
@@ -198,53 +192,39 @@ const Homepage = () => {
 
         {/* Products Section */}
         <div className="col-md-9">
-          <h1 className="text-center">All Products</h1>
-          <div>{total}</div>
-          <div className="d-flex flex-wrap">
-            {products.map((p) => (
-              <div className="card m-2" style={{ width: '18rem' }} key={p._id}>
-                <img
-                  src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
-                  alt={p.name}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">{p.description.substring(0, 20)}...</p>
-                  <p className="card-text"> {'\u20B9'}{p.price}</p>
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => navigate(`/product/${p.slug}`)}
-                  >
-                    More Details
-                  </button>
-                  <button
-                    className="btn btn-secondary m-2"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem('cart', JSON.stringify([...cart, p]));
-                    }}
-                  >
-                    Add To Cart
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="m-2 p-2">
-            {products && products.length < total && (
-              <button
-                className="btn btn-warning"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPage(page + 1);
-                }}
-              >
-                {loading ? 'loading...' : 'loadmore'}
-              </button>
-            )}
-          </div>
+  <div className="d-flex flex-wrap justify-content-center gap-3">
+    {products.map((p) => (
+      <div className="card" style={{ width: '18rem' }} key={p._id}>
+        <img
+          src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
+          className="card-img-top"
+          alt={p.name}
+        />
+        <div className="card-body">
+          <h5 className="card-title">{p.name}</h5>
+          <p className="card-text">{p.description.substring(0, 20)}...</p>
+          <p className="card-text">{'\u20B9'}{p.price}</p>
+          <button
+            className="btn btn-primary"
+            onClick={() => navigate(`/product/${p.slug}`)}
+          >
+            More Details
+          </button>
+          <button
+            className="btn btn-secondary m-2"
+            onClick={() => {
+              setCart([...cart, p]);
+              localStorage.setItem('cart', JSON.stringify([...cart, p]));
+            }}
+          >
+            Add To Cart
+          </button>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
       </div>
     </Layouts>
   );

@@ -12,7 +12,7 @@ const Layouts = ({
   author = "roshanG12" 
 }) => {
   return (
-    <div className="layout-container"> {/* Wrap everything */}
+    <div className="layout-container"> 
       <Helmet>
         <meta charSet='utf-8' />
         <meta name="description" content={description} />
@@ -23,7 +23,6 @@ const Layouts = ({
 
       <Header />
 
-      {/* Ensure main expands */}
       <main className="main-content">
         <ToastContainer />
         {children}

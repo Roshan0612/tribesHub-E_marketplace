@@ -1,4 +1,47 @@
 /* Filters section */
+.animated-greeting {
+  position: relative; 
+  width: 100%; 
+  height: 38vh; 
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  overflow: hidden;
+}
+
+.animated-overlay {
+  position: absolute; 
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+.animated-content {
+  position: relative; 
+  z-index: 2; 
+  text-align: center;
+  color: white; 
+}
+
+.animated-title {
+  font-size: 4rem; 
+  font-weight: bold; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  
+  margin-bottom: 1rem; 
+}
+
+.animated-subtitle {
+  font-size: 1.5rem; 
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
+
+
+
 .filters {
     background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
     padding: 20px;
@@ -46,7 +89,7 @@
     box-shadow: 0 4px 12px rgba(255, 123, 95, 0.6);
   }
   
-  /* Buttons for products - Add to Cart and More Details */
+  
   .home-page .card-body button {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: white;
@@ -75,6 +118,7 @@
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
   }
   
   .home-page .card-name-price {
@@ -109,20 +153,20 @@
     object-fit: cover;
   }
   
-  /* Flexbox grid adjustment for responsive layout */
+
   .home-page {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 200px;
   }
   
   .home-page .card {
-    width: calc(33.333% - 20px);
+    width: calc(93.333% - 200px);
   }
   
   @media (max-width: 1200px) {
     .home-page .card {
-      width: calc(50% - 20px);
+      width: calc(60% - 200px);
     }
   }
   

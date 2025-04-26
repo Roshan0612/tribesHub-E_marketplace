@@ -9,7 +9,6 @@ const dotenv = require("dotenv")
 
 dotenv.config();
 
-//payment gateway
 
 
 const createProductController= async(req,res)=>{
@@ -33,11 +32,7 @@ const createProductController= async(req,res)=>{
             .status(500)
             .send({ error: "photo is Required and should be less then 1mb" });
 
-            // if (!photo) {
-            //     return res.status(500).send({ msg: "Photo is required!" });
-            // } else if (photo.size > 1000000) {
-            //     return res.status(500).send({ msg: "Photo size should be less than 1mb!" });
-            // }
+            
             
         }
         const products = new productModel({...req.fields,slug:slugify(name)});

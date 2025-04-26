@@ -6,7 +6,7 @@ const MiddlemanMenu = () => {
     <div className="text-center">
       <nav className="list-group">
         <h4>Middleman  Dashboard</h4>
-        {/* new addition into tribal */}
+       
         <NavLink
           to="/dashboard/middleman/CreateTribal"
           className="list-group-item"
