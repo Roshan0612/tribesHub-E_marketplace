@@ -8,21 +8,15 @@ const useCategory = () => {
     useEffect(() => {
       getAllCategories();
   }, [])
-    const getAllCategories = async()=>{
-         try {
-            const {data} = await axios.get(`${process.env.REACT_APP_API}/api/v1/category/get-category`,
-                {
-                  headers: {
-                    Authorization: auth?.token, 
-                  },
-                })
-            setCategories(data?.category);
-         } catch (error) {
-            console.log(error)
-           
-         }
-         
-    }
+   const getAllCategories = async()=>{
+      try {
+        // Categories are public; do not require Authorization header so filters are visible to all users
+        const {data} = await axios.get(`${process.env.REACT_APP_API}/api/v1/category/get-category`);
+        setCategories(data?.category || []);
+      } catch (error) {
+        console.log('Error fetching categories:', error?.response?.data || error.message || error);
+      }
+   }
     useEffect(() => {
         getAllCategories();
     }, [auth?.token])

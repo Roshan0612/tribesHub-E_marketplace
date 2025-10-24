@@ -1,12 +1,15 @@
 
-.navbar {
-  z-index: 1;
-    background: linear-gradient(to right, #8e44ad, #3498db); 
+  .navbar {
+    position: sticky; /* stick to top when scrolling */
+    top: 0;
+    z-index: 2000;
+    background: linear-gradient(to right, #8e44ad, #3498db);
     padding: 10px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    backdrop-filter: blur(15px); 
-    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
     transition: all 0.3s ease;
+    overflow: visible; /* allow dropdowns to overflow outside the navbar */
   }
   
   .navbar:hover {
@@ -106,25 +109,61 @@
   }
   
   
-  .nav-item .dropdown-menu {
-    z-index: 1;
-    background: rgba(193, 9, 9, 0.1); 
-    border-radius: 15px;
-    backdrop-filter: blur(10px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  /* Ensure dropdown menus are positioned and visible above other content */
+  /* Target both nav-item dropdowns and generic dropdown containers */
+  .nav-item .dropdown-menu,
+  .dropdown .dropdown-menu {
+    position: absolute; /* required for bootstrap dropdown placement */
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 3000; /* above other UI */
+    background: #ffffff; /* solid white for best contrast */
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    padding: 6px 0;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  /* When Bootstrap adds .show class, make the dropdown visible */
+  .nav-item .dropdown-menu.show,
+  .dropdown .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Desktop: also show dropdown on hover for better UX */
+  @media (hover: hover) and (min-width: 768px) {
+    .nav-item.dropdown:hover > .dropdown-menu,
+    .dropdown:hover > .dropdown-menu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
   }
   
-  .nav-item .dropdown-menu .nav-link {
-    color: rgb(90, 146, 94);
-    padding: 12px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+  .nav-item .dropdown-menu .nav-link,
+  .nav-item .dropdown-menu .dropdown-item,
+  .dropdown .dropdown-menu .dropdown-item {
+    color: #333;
+    padding: 10px 16px;
+    border-radius: 6px;
+    display: block;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
   }
-  
-  .nav-item .dropdown-menu .nav-link:hover {
-    background: rgba(255, 255, 255, 0.2); 
-    color: #b5c36f;
+
+  .nav-item .dropdown-menu .nav-link:hover,
+  .nav-item .dropdown-menu .dropdown-item:hover,
+  .dropdown .dropdown-menu .dropdown-item:hover {
+    background: rgba(243, 115, 84, 0.08);
+    color: #F37254;
   }
   
   /* Cart Badge */

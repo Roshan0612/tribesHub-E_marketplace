@@ -1,38 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../context/Auth';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from '../spinner/Spinner';
-import { useNavigate } from 'react-router-dom';
+
 export default function AdminPrivateRoute(){
     const [ok,setOk]=useState(false);
-    const [auth,setAuth]=useAuth();
-    const navigate = useNavigate();
+    const [loading,setLoading]=useState(true);
+    const [auth]=useAuth();
 
     useEffect(()=>{
         const  authCheck= async() =>{
-            const res = await axios.get(`${process.env.REACT_APP_API}/api/v1/auth/admin-auth`,{
-                headers:{
-                    "Authorization" : auth?.token
+            try {
+                const res = await axios.get(`${process.env.REACT_APP_API}/api/v1/auth/admin-auth`, {
+                    headers: {
+                        Authorization: auth?.token,
+                    },
+                });
+
+                if (res.data?.ok) {
+                    setOk(true);
+                } else {
+                    setOk(false);
                 }
-            });
-            if(res.data.ok ){
-            
-              setOk(true)
-              console.log("role:", res.data.auth?.user?.role);  // Access role correctly from res.data
-              console.log("user:", res.data.auth?.user);  // Log the entire user object
-
-              console.log("roll:",res.auth?.user?.role);
-             
-            }else{
-              setOk(false)
-
-            //   navigate('/');
+            } catch (error) {
+                // treat any error as unauthorized
+                console.error('admin-auth check failed:', error?.response?.status, error?.response?.data || error.message);
+                setOk(false);
+            } finally {
+                setLoading(false);
             }
-        } ;  
-        if(auth?.token) authCheck();
+        } ;
+
+        // If there's no token, skip the check and redirect to login immediately
+        if(!auth?.token){
+            setLoading(false);
+            setOk(false);
+            return;
+        }
+
+        authCheck();
     },[auth?.token]);
 
-    
-    return ok? <Outlet/> : <Spinner path="/"/>
+    // If still checking, show spinner
+    if(loading) return <Spinner path="/login" />
+
+    // If not authorized, redirect to login (or home) — here we send to login
+    if(!ok) return <Navigate to="/login" replace />
+
+    // Authorized
+    return <Outlet />
 }

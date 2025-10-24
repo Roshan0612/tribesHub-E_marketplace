@@ -5,8 +5,6 @@ import { useAuth } from '../context/Auth'
 import { useCart } from '../context/cart';
 import { useNavigate } from 'react-router-dom';
 import "../Styles/CartStyles.css"
-import Razorpay from 'razorpay';
-
 import axios from 'axios';
 const CartPage = () => {
   
@@ -60,7 +58,7 @@ const CartPage = () => {
         const order = data.order; 
   
         const options = {
-          key: process.env.RAZORPAY_KEY_ID,
+          key: process.env.REACT_APP_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID,
           amount: order.amount, 
           currency: 'INR',
           name: 'E-commerce Store',
@@ -99,12 +97,18 @@ const CartPage = () => {
           },
         };
   
-        const razorpay = new  window.Razorpay(options);
+        if (typeof window.Razorpay === 'undefined') {
+          alert('Razorpay SDK not loaded. Please ensure https://checkout.razorpay.com/v1/checkout.js is included in index.html');
+          return;
+        }
+
+        const razorpay = new window.Razorpay(options);
         razorpay.open();
       }
     } catch (error) {
       console.error('Payment Error:', error);
-      alert('Error during payment initiation');
+      const serverMessage = error?.response?.data?.message || error?.response?.data || error.message;
+      alert('Error during payment initiation: ' + serverMessage);
     }
   };
   

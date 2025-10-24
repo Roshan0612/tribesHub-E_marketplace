@@ -37,6 +37,42 @@
     transform: translateX(5px); 
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   }
+
+  /* If admin menu contains nested dropdowns (sub-menus), make them visible and accessible */
+  .dashboard-menu .submenu {
+    display: none;
+    margin-left: 8px;
+    padding-left: 10px;
+  }
+
+  .list-group-item.has-submenu {
+    position: relative;
+  }
+
+  .list-group-item.has-submenu::after {
+    content: '\25BA'; /* small arrow */
+    float: right;
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+  }
+
+  .list-group-item.has-submenu.open::after {
+    transform: rotate(-90deg);
+  }
+
+  /* Show submenu on hover for desktop and on .open class (toggle) for accessibility */
+  @media (hover: hover) and (min-width: 768px) {
+    .list-group-item.has-submenu:hover .submenu {
+      display: block;
+    }
+  }
+
+  .list-group-item .submenu .list-group-item {
+    background: transparent;
+    padding-left: 20px;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
   
   
   .list-group-item.active {

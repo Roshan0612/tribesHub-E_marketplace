@@ -12,7 +12,8 @@ router.post("/create-category", requireSignIn, isAdmin, createCategoryController
 
 router.put("/update-category/:id",requireSignIn,isAdmin,updateCategoryController);
 
-router.get("/get-category",requireSignIn,getAllCategoryController);
+// Public: fetch categories — allow unauthenticated access so filters are visible to all users
+router.get("/get-category", getAllCategoryController);
 
 router.get("/get-single-category/:slug",requireSignIn,isAdmin,getSingleCategoryController);
 

@@ -15,11 +15,11 @@ export const AuthProvider = ({children}) => {
         const data=localStorage.getItem('auth');
         if(data){
         const parsedata = JSON.parse(data);
+            // Initialize auth from localStorage; avoid merging with stale state
             setAuth({
-              ...auth,
-              user:parsedata.user,
-              token:parsedata.token,
-              role: parsedata.user.role, // Set the role
+              user: parsedata.user || null,
+              token: parsedata.token || "",
+              role: parsedata.user?.role || null,
             });
         }
     },[]);

@@ -1,4 +1,4 @@
-/* Ensure full-height layout */
+/* Footer styles and layout helpers */
 .footer-link{
   z-index: 1;
   color: white;
@@ -7,24 +7,19 @@
 .footer-link:hover{
   text-decoration: underline;
 }
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+
+/* Ensure the page layout places footer at the bottom when content is short.
+   The application root (`#root`) and `.layout-container` are used to
+   implement a sticky footer using flexbox.
+*/
+.layout-container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* ensures the container fills viewport */
 }
-
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
-}
-
 
 .main-content {
-  flex: 1;
+  flex: 1 0 auto; /* take available space so footer is pushed to bottom */
 }
 
 /* Footer */
@@ -34,5 +29,14 @@ html, body {
   text-align: center;
   padding: 20px 0;
   width: 100%;
+  margin-top: auto; /* push footer to bottom when possible */
+}
+
+/* Small responsiveness tweak */
+@media (max-width: 576px) {
+  .footer {
+    padding: 16px 8px;
+    font-size: 0.95rem;
+  }
 }
 

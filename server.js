@@ -56,6 +56,18 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 8000;
 
+// If a built React app exists in client/build, serve it as static assets so
+// visiting http://localhost:8000 will return the front-end. This also allows
+// serving the app in production from the same Express server.
+const clientBuildPath = path.join(__dirname, 'client', 'build');
+if (fs.existsSync(clientBuildPath)) {
+    app.use(express.static(clientBuildPath));
+    // Serve index.html for any unknown route (client-side routing)
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(clientBuildPath, 'index.html'));
+    });
+}
+
 app.listen(PORT, () => {
     console.log(`server started at the port ${PORT} `.bgYellow.green.bold.underline);
 });

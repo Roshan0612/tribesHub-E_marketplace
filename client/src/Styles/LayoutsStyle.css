@@ -15,8 +15,9 @@ html, body {
 
 
 main {
-    flex-grow: 1; 
-    padding-bottom: 20px; 
+    flex-grow: 1;
+    /* avoid adding extra bottom padding which can create white space below footer */
+    padding-bottom: 0;
 }
 
 
@@ -26,4 +27,5 @@ footer {
     padding: 20px 0;
     text-align: center;
     width: 100%;
+    margin-top: auto; /* push footer to bottom when content is short */
 }
